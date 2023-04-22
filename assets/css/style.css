@@ -300,8 +300,11 @@ footer ul li {
 
 @media screen and (max-width: 520px){
     .navbar-ul > li > a{
-        font-size: .3rem;
-        margin: 0 .3rem;
+        font-size: .4rem;
+        margin: 0 auto;
+    }
+    #navbarNav{
+        margin: auto !important;
     }
     .hero{
         margin-bottom: 0;
