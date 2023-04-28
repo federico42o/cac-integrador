@@ -17,14 +17,23 @@ body{
 
 .navbar-brand img{
     width: 100px;
+    flex: 1;
+}
+.navbar-toggler svg{
+    width: 30px;
+    fill: #fff;
 }
 
 .navbar-ul{
     gap: 2rem;
+
 }
 .hero{
     margin-bottom: 14rem ;
     height: calc(100vh - 90px) !important
+}
+.nav-item{
+    margin: 0 auto;
 }
 .nav-item > .text-success{
     color: #1e9ea8 !important;
