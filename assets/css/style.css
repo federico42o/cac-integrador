@@ -163,6 +163,9 @@ footer {
     color: #fff;
     padding: 2rem 0;
 }
+footer ul{
+    gap: 1rem;
+}
 
 footer ul li {
     list-style: none;
@@ -256,35 +259,42 @@ footer ul li {
         margin: auto;
         object-fit: fill;
     }
+    footer ul{
+        gap: 2rem;
+        margin: auto;
+    }
 
 }
 
-@media screen and (max-width: 678px) {
+@media screen and (max-width: 868px) {
     .navbar-ul>li>a {
         font-size: .8rem;
     }
 
     .hero {
         margin-bottom: 0;
-        height: 800px !important;
-        position: relative;
+        height: auto !important;
+        background-color: #1e1e1e;
+    }
+
+    .carousel-item>img {
+        filter: brightness(1);
     }
 
     .info-hero {
-        height: 500px !important;
+        height: 400px !important;
         margin: 0 auto !important;
         display: flex;
         flex-direction: column;
         align-items: center !important;
-        top: 20%;
-        bottom: 0;
-        right: 0;
+        justify-content: center;
+        position: relative;
 
     }
 
     .info-hero h1 {
-
-        font-size: 2rem;
+        color: #fff;
+        font-size: 1rem;
         font-weight: 700;
         margin: .3 auto;
         align-self: center !important;
@@ -292,8 +302,8 @@ footer ul li {
     }
 
     .info-hero p {
-
-        font-size: 2rem;
+        color: #fff;
+        font-size: .8rem;
         width: 80%;
         font-weight: 400;
         margin: .3 auto;
@@ -480,12 +490,15 @@ footer ul li {
         background-color: #1e9ea8;
         color: #fff;
     }
+    footer ul{
+        gap: 1rem ;
+        flex-direction: column;
+    }
 
     footer ul li {
         list-style: none;
-        margin: auto;
         cursor: pointer;
-        font-size: .5rem;
+        font-size: .8rem;
     }
 
     ul {
