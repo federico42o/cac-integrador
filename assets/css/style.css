@@ -173,6 +173,67 @@ footer ul li {
     cursor: pointer;
 }
 
+.subscription-container{
+    display: flex;
+    gap: 1rem;
+    width: 50%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    cursor:pointer;
+}
+.subscription-box{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    color: #1e1e1e;   
+}
+.subscription-box button{
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 1.3s ease-out;
+}
+.box {
+    transition: all .3s ease-out;
+    color: #fff;
+}
+.box span{
+    color: #fff;
+}
+.box button{
+    display: none;
+}
+.subscription-box > span{
+    font-size: .8rem;
+    font-weight: 300;
+}
+#trainee{
+    border-top: 2px solid #18a051;
+}
+#trainee button{
+    border: 2px solid #18a051;
+}
+#student{
+    border-top: 2px solid #2a428f;
+    
+}
+#student button{
+    border: 2px solid #2a428f;
+    
+}
+#junior {
+    border-top: 2px solid #a87c1d;
+}
+#junior button{
+    border: 2px solid #a87c1d;
+}
+
 /*media queries*/
 
 @media screen and (max-width: 1279px) {
@@ -262,6 +323,10 @@ footer ul li {
     footer ul{
         gap: 2rem;
         margin: auto;
+    }
+    .subscription-container{
+        margin: auto;
+        flex-wrap: nowrap;
     }
 
 }
@@ -357,6 +422,16 @@ footer ul li {
         margin: auto;
         object-fit: fill;
     }
+    .subscription-container{
+        margin: auto;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .subscription-box{
+        width: 50%;
+        margin: auto;
+    }
+
 }
 
 @media screen and (max-width: 520px) {
@@ -389,6 +464,7 @@ footer ul li {
         position: relative;
 
     }
+
 
     .info-hero h1 {
         color: #fff;
@@ -472,7 +548,7 @@ footer ul li {
     .form-inputs {
         display: flex !important;
         flex-direction: column !important;
-        width: 80% !important;
+        width: 100% !important;
         gap: 1rem !important;
         justify-content: center !important;
         align-items: center;

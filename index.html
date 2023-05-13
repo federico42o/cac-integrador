@@ -43,7 +43,7 @@
                             <a class="nav-link text-light" href="#contacto">Conviértete en orador</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-success" href="#">Comprar tickets</a>
+                            <a class="nav-link text-success" href="#tickets">Comprar tickets</a>
                         </li>
                     </ul>
                 </div>
@@ -204,6 +204,76 @@
                 </form>
             </div>
 
+        </section>
+        <hr class="hr hr-blurry w-75 mx-auto" />
+        <section class="tickets my-5" id="tickets">
+
+            <div class="subscription-container">
+            <div class="subscription-box" id="student">
+                <p class="fs-3">Estudiante</p>
+                <p class="fs-4">Tiene un descuento</p>
+                <p class="fs-1 fw-bold">80%</p>
+                <span class="">* presentar documentación</span>
+                <button class="btn" type="button"
+                id="submitBtn" onclick="selectBox('student')">Elegir</button>
+            </div>
+            <div class="subscription-box" id="trainee">
+                <p  class="fs-3">Trainee</p>
+                <p class="fs-4">Tiene un descuento</p>
+                <p class="fs-1 fw-bold">50%</p>
+                <span class="">* presentar documentación</span>
+                <button class="btn" type="button"
+                id="submitBtn" onclick="selectBox('trainee')">Elegir</button>
+            </div>
+            <div class="subscription-box" id="junior">
+                <p class="fs-3">Junior</p>
+                <p class="fs-4">Tiene un descuento</p>
+                <p class="fs-1 fw-bold">15%</p>
+                <span class="">* presentar documentación</span>
+                <button class="btn" type="button"
+                id="submitBtn" onclick="selectBox('junior')">Elegir</button>
+            </div>
+        </div>
+        <div class="mt-5">
+            <h5 class="text-center">VENTA</h5>
+            <p class="text-center fs-1">VALOR DE TICKET $200</p>
+        </div>
+
+            <form id="form-tickets" class="my-5 mx-auto w-50 d-flex flex-column">
+                <div class="form-inputs">
+                    <input type="text" class="form-control " name="" id="formName" class="name"
+                        placeholder="Nombre">
+                    <input type="text" class="form-control " name="" id="formApellido" class="apellido"
+                        placeholder="Apellido">
+                </div>
+                <input type="email" class="form-control form-control" name="" id="formEmail"
+                    placeholder="Correo"></input>
+                
+                    <div class="form-inputs  d-flex justify-content-between">
+                        <div class="fw-bold quantity w-100">
+                        <label for="qty">Cantidad</label>
+                        <input type="number" class="form-control " name="" id="qty" class="name"
+                            placeholder="Cantidad" min="1" max="999">
+                        </div>
+                        <div class="fw-bold category w-100">
+                            <label for="type">Categoría</label>
+                        <select type="text" class="form-control " name="" id="type" class="apellido"
+                            placeholder="Apellido">
+                            <option value="none">Seleccionar categoría</option>
+                            <option value="student">Estudiante</option>
+                            <option value="trainee">Trainee</option>
+                            <option value="junior">Junior</option>
+                        </select>
+                    </div>
+                    </div>
+                    <input class="form-control bg-info p-3 my-2 bg-opacity-25 border-info" type="text" id="totalValue" value="Total: $ " disabled readonly>
+                    <div class="form-footer mt-2 d-flex justify-content-evenly align-items-center w-50 mx-auto">
+                    <button class="btn btn-terciary text-light align-self-start " type="reset"
+                        id="submitBtn">Borrar</button>
+                    <button class=" btn btn-terciary text-light align-self-start" type="button"
+                    id="resumenTickets">Resumen</button>
+                </div>
+            </form>
         </section>
 
     </main>
