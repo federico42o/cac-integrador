@@ -10,7 +10,9 @@ const ticketBtn = document.getElementById('resumenTickets');
 const totalValue = document.getElementById('totalValue');
 const quantity = document.getElementById('qty');
 const ticketType = document.getElementById('type');
+const resetButton = document.querySelector('button[type="reset"]');
 const styles = {
+    initial:"#ffffff",
     trainee:"#18a051",
     student:"#2a428f",
     junior:"#a87c1d"
@@ -34,16 +36,15 @@ form.addEventListener('submit', (e)=> {
 
 const selectBox = (box) => {
 
-    console.log(box)
     if (box in boxes) {
         Object.keys(boxes).forEach(key => {
           if (key === box) {
             ticketType.value = box;
             boxes[key].classList.add('box');
             boxes[key].style.backgroundColor = styles[key];
-          } else {
+          } else{
             boxes[key].classList.remove('box');
-            boxes[key].style.background = "#fff";
+            boxes[key].style.background = styles['initial'];
           }
         });
     }
@@ -68,10 +69,15 @@ ticketBtn.addEventListener('click', showTotal);
 ticketType.addEventListener('change', (e)=>{
     if(e.target.value !== 'none') {
     selectBox(e.target.value);
-    }else{
-        Object.keys(boxes).forEach(key => {
-            boxes[key].classList.remove('box');
-            boxes[key].style.background = "#fff";
-        });
+    } else{
+        resetBoxes();
     }
 })
+const resetBoxes = () => { 
+  ticketType.value = 'none';
+    Object.keys(boxes).forEach(key => {
+        boxes[key].classList.remove('box');
+        boxes[key].style.background = styles['initial'];
+    });
+  }
+resetButton.addEventListener('click', resetBoxes);
