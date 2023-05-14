@@ -32,7 +32,6 @@ form.addEventListener('submit', (e)=> {
     formContainer.style.backgroundSize = 'contain';
 })
 
-
 const selectBox = (box) => {
 
     console.log(box)
@@ -66,3 +65,13 @@ const showTotal = () => {
 }
 
 ticketBtn.addEventListener('click', showTotal);
+ticketType.addEventListener('change', (e)=>{
+    if(e.target.value !== 'none') {
+    selectBox(e.target.value);
+    }else{
+        Object.keys(boxes).forEach(key => {
+            boxes[key].classList.remove('box');
+            boxes[key].style.background = "#fff";
+        });
+    }
+})
