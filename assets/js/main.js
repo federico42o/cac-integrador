@@ -22,7 +22,7 @@ const boxes = {
     'trainee': traineeBox,
     'junior': jrBox
   };    
-    
+const pesosARSLocale = Intl.NumberFormat('es-AR');
 
 form.addEventListener('submit', (e)=> {
     e.preventDefault();
@@ -62,7 +62,7 @@ const showTotal = () => {
     if(quantity.value === "") {
         quantity.value = 0;
     }
-    totalValue.value = "Total a pagar: $" +  parseFloat(quantity.value * (200 * descounts[ticketType.value]));  
+    totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value * (200 * descounts[ticketType.value]));  
 }
 
 ticketBtn.addEventListener('click', showTotal);
