@@ -194,15 +194,17 @@ footer ul li {
     padding: 1rem;
     border-radius: 10px;
     color: #1e1e1e;   
+    height: 400px;
+    transition: height .5s ease-out;
 }
 .subscription-box button{
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 1.3s ease-out;
 }
 .box {
-    transition: all .3s ease-out;
+    height: 320px;
     color: #fff;
+    transition: height .6s ease-out;
 }
 .box span{
     color: #fff;
