@@ -15,7 +15,11 @@ const styles = {
     student:"#2a428f",
     junior:"#a87c1d"
 }
-    
+const boxes = {
+    'student': studentBox,
+    'trainee': traineeBox,
+    'junior': jrBox
+  };    
     
 
 form.addEventListener('submit', (e)=> {
@@ -30,11 +34,7 @@ form.addEventListener('submit', (e)=> {
 
 
 const selectBox = (box) => {
-    const boxes = {
-        'student': studentBox,
-        'trainee': traineeBox,
-        'junior': jrBox
-      };
+
     console.log(box)
     if (box in boxes) {
         Object.keys(boxes).forEach(key => {

@@ -321,7 +321,7 @@ footer ul li {
         object-fit: fill;
     }
     footer ul{
-        gap: 2rem;
+        gap: 1rem;
         margin: auto;
     }
     .subscription-container{
