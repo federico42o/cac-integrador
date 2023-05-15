@@ -83,9 +83,11 @@
                     <button class="btn btn-outline-light " id="btn-hero">
                         Quiero ser orador
                     </button>
-                    <button class="btn btn-terciary text-light" id="btn-hero">
+                    <a class="btn btn-terciary text-light" id="btn-hero" href="#tickets">
+
                         Comprar tickets
-                    </button>
+
+                    </a>
                 </div>
             </div>
 
@@ -208,14 +210,14 @@
         <hr class="hr hr-blurry w-75 mx-auto" />
         <section class="tickets my-5" id="tickets">
 
-            <div class="subscription-container">
+            <div class="subscription-container" id="tickets2">
             <div class="subscription-box" id="student">
                 <p class="fs-3">Estudiante</p>
                 <p class="fs-4">Tiene un descuento</p>
                 <p class="fs-1 fw-bold">80%</p>
                 <span class="">* presentar documentación</span>
                 <button class="btn" type="button"
-                id="submitBtn" onclick="selectBox('student')">Elegir</button>
+                id="submitBtn" onclick="selectBox('student')">Soy estudiante!</button>
             </div>
             <div class="subscription-box" id="trainee">
                 <p  class="fs-3">Trainee</p>
@@ -223,7 +225,7 @@
                 <p class="fs-1 fw-bold">50%</p>
                 <span class="">* presentar documentación</span>
                 <button class="btn" type="button"
-                id="submitBtn" onclick="selectBox('trainee')">Elegir</button>
+                id="submitBtn" onclick="selectBox('trainee')">Soy trainee!</button>
             </div>
             <div class="subscription-box" id="junior">
                 <p class="fs-3">Junior</p>
@@ -231,7 +233,7 @@
                 <p class="fs-1 fw-bold">15%</p>
                 <span class="">* presentar documentación</span>
                 <button class="btn" type="button"
-                id="submitBtn" onclick="selectBox('junior')">Elegir</button>
+                id="submitBtn" onclick="selectBox('junior')">Soy junior!</button>
             </div>
         </div>
         <div class="mt-5">
@@ -252,13 +254,12 @@
                     <div class="form-inputs  d-flex justify-content-between">
                         <div class="fw-bold quantity w-100">
                         <label for="qty">Cantidad</label>
-                        <input type="number" class="form-control " name="" id="qty" class="name"
+                        <input type="number" class="form-control " name="" id="qty"
                             placeholder="Cantidad" min="1" max="999">
                         </div>
                         <div class="fw-bold category w-100">
                             <label for="type">Categoría</label>
-                        <select type="text" class="form-control " name="" id="type" class="apellido"
-                            placeholder="Apellido">
+                        <select type="text" class="form-control " name="" id="type">
                             <option value="none">Seleccionar categoría</option>
                             <option value="student">Estudiante</option>
                             <option value="trainee">Trainee</option>
@@ -266,7 +267,7 @@
                         </select>
                     </div>
                     </div>
-                    <input class="form-control bg-info p-3 my-2 bg-opacity-25 border-info" type="text" id="totalValue" value="Total: $ " disabled readonly>
+                    <input class="form-control bg-info p-3 my-2 bg-opacity-25 border-info" type="text" id="totalValue" value="Total a pagar: $ " disabled readonly>
                     <div class="form-footer mt-2 d-flex justify-content-evenly align-items-center w-50 mx-auto">
                     <button class="btn btn-terciary text-light align-self-start " type="reset"
                         id="submitBtn">Borrar</button>
