@@ -78,7 +78,12 @@ const showTotal = () => {
     checkout.email.textContent = document.getElementById('formEmail').value;
     checkout.quantity.textContent = quantity.value;
     checkout.category.textContent = ticketType.value;
-    totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value *200-((quantity.value* 200 * discounts[ticketType.value])));  
+    if(ticketType.value === 'none'){
+      checkout.category.textContent = 'General'
+      totalValue.value = "Total a pagar: $" + 200*quantity.value;
+    }else{
+      totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value *200-((quantity.value* 200 * discounts[ticketType.value])));  
+    }
 }
 const showModal = () => {
   if(formTickets.checkValidity()){
