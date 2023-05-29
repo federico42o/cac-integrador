@@ -244,22 +244,22 @@
             <form id="form-tickets" class="my-5 mx-auto w-50 d-flex flex-column">
                 <div class="form-inputs">
                     <input type="text" class="form-control " name="" id="formName" class="name"
-                        placeholder="Nombre">
+                        placeholder="Nombre" required>
                     <input type="text" class="form-control " name="" id="formApellido" class="apellido"
-                        placeholder="Apellido">
+                        placeholder="Apellido" required>
                 </div>
                 <input type="email" class="form-control form-control" name="" id="formEmail"
-                    placeholder="Correo"></input>
+                    placeholder="Correo" required>
                 
                     <div class="form-inputs  d-flex justify-content-between">
                         <div class="fw-bold quantity w-100">
                         <label for="qty">Cantidad</label>
                         <input type="number" class="form-control " name="" id="qty"
-                            placeholder="Cantidad" min="1" max="999">
+                            placeholder="Cantidad" min="1" max="999" required>
                         </div>
                         <div class="fw-bold category w-100">
                             <label for="type">Categoría</label>
-                        <select type="text" class="form-control " name="" id="type">
+                        <select type="text" class="form-control " name="" id="type" required>
                             <option value="none">Seleccionar categoría</option>
                             <option value="student">Estudiante</option>
                             <option value="trainee">Trainee</option>
@@ -271,7 +271,7 @@
                     <div class="form-footer mt-2 d-flex justify-content-evenly align-items-center w-50 mx-auto">
                     <button class="btn btn-terciary text-light align-self-start " type="reset"
                         id="submitBtn">Borrar</button>
-                    <button class=" btn btn-terciary text-light align-self-start" type="button"
+                    <button class=" btn btn-terciary text-light align-self-start" type="submit"
                     id="resumenTickets">Resumen</button>
                 </div>
             </form>

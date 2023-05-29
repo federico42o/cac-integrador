@@ -10,6 +10,7 @@ const ticketBtn = document.getElementById('resumenTickets');
 const totalValue = document.getElementById('totalValue');
 const quantity = document.getElementById('qty');
 const ticketType = document.getElementById('type');
+const formTickets = document.getElementById('form-tickets');
 const resetButton = document.querySelector('button[type="reset"]');
 const styles = {
     initial:"#ffffff",
@@ -65,7 +66,10 @@ const showTotal = () => {
     totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value * (200 * descounts[ticketType.value]));  
 }
 
-ticketBtn.addEventListener('click', showTotal);
+formTickets.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  showTotal();
+});
 ticketType.addEventListener('change', (e)=>{
     if(e.target.value !== 'none') {
     selectBox(e.target.value);
