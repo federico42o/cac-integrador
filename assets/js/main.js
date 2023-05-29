@@ -64,11 +64,11 @@ const selectBox = (box) => {
 }
 
 const showTotal = () => {
-    const descounts = {
+    const discounts = {
         'none' : 1,
-        'student': 0.15,
+        'student': 0.80,
         'trainee': 0.5,
-        'junior': 0.80
+        'junior': 0.15
         };
     
     if(quantity.value === "") {
@@ -78,7 +78,7 @@ const showTotal = () => {
     checkout.email.textContent = document.getElementById('formEmail').value;
     checkout.quantity.textContent = quantity.value;
     checkout.category.textContent = ticketType.value;
-    totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value * (200 * descounts[ticketType.value]));  
+    totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value * (200 * discounts[ticketType.value]));  
 }
 const showModal = () => {
   if(formTickets.checkValidity()){
