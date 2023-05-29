@@ -267,14 +267,56 @@
                         </select>
                     </div>
                     </div>
-                    <input class="form-control bg-info p-3 my-2 bg-opacity-25 border-info" type="text" id="totalValue" value="Total a pagar: $ " disabled readonly>
+
                     <div class="form-footer mt-2 d-flex justify-content-evenly align-items-center w-50 mx-auto">
                     <button class="btn btn-terciary text-light align-self-start " type="reset"
                         id="submitBtn">Borrar</button>
                     <button class=" btn btn-terciary text-light align-self-start" type="submit"
                     id="resumenTickets">Resumen</button>
+                    
                 </div>
             </form>
+            <div class="modal" id="modal" tabindex="-1">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" id="close-modal2" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="ticket">
+                        <div class="ticket__content">
+                            <h4>Resumen</h4>
+                          <div class="ticket__text">
+                            <div class="ticket__text__field">
+                            <span class="ticket__text--bold">Nombre Completo:</span>
+                            <span id="name-ticket"></span>
+                            </div>
+                            <div class="ticket__text__field">
+                            <span class="ticket__text--bold">Email:</span>
+                            <span id="email-ticket"></span>
+                        </div>
+                        <div class="ticket__text__field">
+                            <span class="ticket__text--bold">Cantidad tickets:</span>
+                            <span id="qty-tickets"></span>
+                        </div>
+                        <div class="ticket__text__field">
+                            <span class="ticket__text--bold">Categoría:</span>
+                            <span id="category-ticket"></span>
+                        </div>
+                          </div>
+                          <div class="modal-qr">
+                            <p>Escanea el qr para procesar el pago </p>
+                            <img src="./assets/img/qr.png" alt="qrcode" class="qrcode">
+                        </div>
+                      </div>
+                        <input class="form-control bg-info p-3 my-2 bg-opacity-25 border-info" type="text" id="totalValue" value="Total a pagar: $ " disabled readonly>
+                    </div>
+                    <div class="modal-footer">
+                      <button id="close-modal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </section>
 
     </main>

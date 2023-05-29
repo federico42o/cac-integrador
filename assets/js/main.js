@@ -12,12 +12,23 @@ const quantity = document.getElementById('qty');
 const ticketType = document.getElementById('type');
 const formTickets = document.getElementById('form-tickets');
 const resetButton = document.querySelector('button[type="reset"]');
+const myModal = document.getElementById('modal')
+const closeModal = document.getElementById('close-modal')
+const closeModal2 = document.getElementById('close-modal2')
+
 const styles = {
     initial:"#ffffff",
     trainee:"#18a051",
     student:"#2a428f",
     junior:"#a87c1d"
 }
+const checkout = {
+  name: document.getElementById('name-ticket'),
+  email: document.getElementById('email-ticket'),
+  quantity: document.getElementById('qty-tickets'),
+  category: document.getElementById('category-ticket')
+}
+
 const boxes = {
     'student': studentBox,
     'trainee': traineeBox,
@@ -63,12 +74,30 @@ const showTotal = () => {
     if(quantity.value === "") {
         quantity.value = 0;
     }
+    checkout.name.textContent = document.getElementById('formName').value + " " + document.getElementById('formApellido').value;
+    checkout.email.textContent = document.getElementById('formEmail').value;
+    checkout.quantity.textContent = quantity.value;
+    checkout.category.textContent = ticketType.value;
     totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value * (200 * descounts[ticketType.value]));  
 }
+const showModal = () => {
+  if(formTickets.checkValidity()){
+    myModal.style.display = "block";
+    showTotal();
+  }
+} 
+closeModal.addEventListener('click', () => {
+  myModal.style.display = "none";
+})
+closeModal2.addEventListener('click', () => {
+  myModal.style.display = "none";
+})
+
+
 
 formTickets.addEventListener('submit', (e)=>{
   e.preventDefault();
-  showTotal();
+  showModal();
 });
 ticketType.addEventListener('change', (e)=>{
     if(e.target.value !== 'none') {
@@ -84,4 +113,7 @@ const resetBoxes = () => {
         boxes[key].style.background = styles['initial'];
     });
   }
+
+
+
 resetButton.addEventListener('click', resetBoxes);
