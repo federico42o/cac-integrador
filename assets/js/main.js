@@ -78,7 +78,7 @@ const showTotal = () => {
     checkout.email.textContent = document.getElementById('formEmail').value;
     checkout.quantity.textContent = quantity.value;
     checkout.category.textContent = ticketType.value;
-    totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(200-(quantity.value * (200 * discounts[ticketType.value])));  
+    totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value *200-((200 * discounts[ticketType.value])));  
 }
 const showModal = () => {
   if(formTickets.checkValidity()){
