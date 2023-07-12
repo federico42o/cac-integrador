@@ -36,16 +36,35 @@ const boxes = {
   };    
 const pesosARSLocale = Intl.NumberFormat('es-AR');
 
-form.addEventListener('submit', (e)=> {
-    e.preventDefault();
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const name = formData.get('name');
+  const lastname = formData.get('lastname');
+  const subject = formData.get('subject');
+  console.log(name, lastname, subject);
+
+  await fetch('http://localhost:8080/api/speakers', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name,
+      lastname,
+      subject
+    })
+  }).then( () => {
+    
     message.classList.remove('hidden');
     form.classList.add('hidden');
     formHeader.classList.add('hidden');
     submitBtn.style.display = 'none';
     formContainer.style.background = 'url(./assets/img/success-gif.gif) no-repeat center center';
     formContainer.style.backgroundSize = 'contain';
-})
-
+    
+  })
+});
 const selectBox = (box) => {
 
     if (box in boxes) {
@@ -64,12 +83,6 @@ const selectBox = (box) => {
 }
 
 const showTotal = () => {
-    const discounts = {
-        'none' : 1,
-        'student': 0.80,
-        'trainee': 0.5,
-        'junior': 0.15
-        };
     
     if(quantity.value === "") {
         quantity.value = 0;
@@ -80,11 +93,26 @@ const showTotal = () => {
     checkout.category.textContent = ticketType.value;
     if(ticketType.value === 'none'){
       checkout.category.textContent = 'General'
-      totalValue.value = "Total a pagar: $" + 200*quantity.value;
+      totalValue.value = "Total a pagar: $" + calculateFinalPrice(quantity.value,ticketType.value);
     }else{
-      totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(quantity.value *200-((quantity.value* 200 * discounts[ticketType.value])));  
+      totalValue.value = "Total a pagar: $" +  pesosARSLocale.format(calculateFinalPrice(quantity.value,ticketType.value));  
     }
 }
+calculateFinalPrice = (quantity,type) => {
+  const discounts = {
+    'none' : 1,
+    'student': 0.80,
+    'trainee': 0.5,
+    'junior': 0.15
+    };
+
+  if(type === 'none'){
+    return 200*quantity
+  }else{
+    return quantity *200-((quantity* 200 * discounts[type]))  
+  }
+}
+
 const showModal = () => {
   if(formTickets.checkValidity()){
     myModal.style.display = "block";
@@ -100,9 +128,32 @@ closeModal2.addEventListener('click', () => {
 
 
 
-formTickets.addEventListener('submit', (e)=>{
+formTickets.addEventListener('submit', async (e)=>{
   e.preventDefault();
+  const formData = new FormData(formTickets);
+  const name = formData.get('name');
+  const lastname = formData.get('lastname');
+  const email = formData.get('email');
+  const quantity = formData.get('quantity');
+  const category = formData.get('category').toUpperCase();
+  const totalPrice = calculateFinalPrice(quantity,category.toLowerCase());
+
+  await fetch('http://localhost:8080/api/sale-details', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name,
+      lastname,
+      email,
+      quantity,
+      category,
+      totalPrice
+    })
+  }).then( () => {
   showModal();
+  })
 });
 ticketType.addEventListener('change', (e)=>{
     if(e.target.value !== 'none') {
@@ -118,7 +169,6 @@ const resetBoxes = () => {
         boxes[key].style.background = styles['initial'];
     });
   }
-
 
 
 resetButton.addEventListener('click', resetBoxes);

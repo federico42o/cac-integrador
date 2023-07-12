@@ -191,12 +191,12 @@
                 </header>
                 <form id="form" class="my-5 mx-auto w-50 d-flex flex-column">
                     <div class="form-inputs">
-                        <input type="text" class="form-control " name="" id="form-textarea" class="name"
+                        <input type="text" class="form-control " name="name" id="form-textarea" class="name"
                             placeholder="Nombre">
-                        <input type="text" class="form-control " name="" id="form-apellido" class="apellido"
+                        <input type="text" class="form-control " name="lastname" id="form-apellido" class="apellido"
                             placeholder="Apellido">
                     </div>
-                    <textarea class="fs-2 form-textarea form-control" name="" id="form-textarea"
+                    <textarea class="fs-2 form-textarea form-control" name="subject" id="form-textarea"
                         placeholder="Sobre que quieres hablar?"></textarea>
                     <div class="form-footer">
                         <p class="text-left">Recuerda incluir un titulo para tu charla</p>
@@ -243,23 +243,23 @@
 
             <form id="form-tickets" class="my-5 mx-auto w-50 d-flex flex-column">
                 <div class="form-inputs">
-                    <input type="text" class="form-control " name="" id="formName" class="name"
+                    <input type="text" class="form-control " name="name" id="formName" class="name"
                         placeholder="Nombre" required>
-                    <input type="text" class="form-control " name="" id="formApellido" class="apellido"
+                    <input type="text" class="form-control " name="lastname" id="formApellido" class="apellido"
                         placeholder="Apellido" required>
                 </div>
-                <input type="email" class="form-control form-control" name="" id="formEmail"
+                <input type="email" class="form-control form-control" name="email" id="formEmail"
                     placeholder="Correo" required>
                 
                     <div class="form-inputs  d-flex justify-content-between">
                         <div class="fw-bold quantity w-100">
                         <label for="qty">Cantidad</label>
-                        <input type="number" class="form-control " name="" id="qty"
+                        <input type="number" class="form-control " name="quantity" id="qty"
                             placeholder="Cantidad" min="1" max="999" required>
                         </div>
                         <div class="fw-bold category w-100">
                             <label for="type">Categoría</label>
-                        <select type="text" class="form-control " name="" id="type" required>
+                        <select type="text" class="form-control " name="category" id="type" required>
                             <option value="none">Seleccionar categoría</option>
                             <option value="student">Estudiante</option>
                             <option value="trainee">Trainee</option>
